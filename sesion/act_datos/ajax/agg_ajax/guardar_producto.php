@@ -1,6 +1,6 @@
 <?php
 if (empty($_POST['nomap_add'])) {
-	$errors[] = "Ingresa el nombre del disco";
+	$errors[] = "Input (disco) name";
 } elseif (!empty($_POST['nomap_add'])) {
 	require_once("../../conexion.php"); //Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) editor_nombre
@@ -28,9 +28,9 @@ if (empty($_POST['nomap_add'])) {
 					$query = mysqli_query($con, $sql3);
 				if ($query) {
 					header('location: ../../agg.php');
-					$messages[] = "Carga exitosa.";
+					$messages[] = "Upload successful.";
 				} else {
-					$errors[] = "Carga fallida.";
+					$errors[] = "Upload failed.";
 				}
 	
 	// if product has been added successfully
@@ -57,7 +57,7 @@ if (isset($messages)) {
 ?>
 	<div class="alert alert-success" role="alert">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<strong>Concretada</strong>
+		<strong>Completed</strong>
 		<?php
 		foreach ($messages as $message) {
 			echo $message;

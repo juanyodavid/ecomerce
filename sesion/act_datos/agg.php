@@ -26,10 +26,10 @@
                        <h2>Discos: <b></b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="../cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe8ac;</i> <span>Cerrar sesión</span></a>
-                        <a href="../act_datos/musica.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar música</span></a>
+                        <a href="../cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe8ac;</i> <span>Log Out</span></a>
+                        <a href="../act_datos/musica.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add música</span></a>
 
-                        <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar disco</span></a>
+                        <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add disco</span></a>
                      <a href="../menu.php" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xe5c4;</i> <span>Menú</span>
                         </a>
                     </div>

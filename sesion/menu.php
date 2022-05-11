@@ -13,7 +13,7 @@ $name = $_SESSION['nombre'];
 
 <head>
     <meta charset="UTF-8">
-    <title>Administracion Tareas</title>
+    <title>E-Commerce</title>
     <link rel="stylesheet" href="../css/ppl.css"><!-- hasta aca carga las librerias -->
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
@@ -29,11 +29,11 @@ $name = $_SESSION['nombre'];
 
 <body>
     <div class="welcome">
-        <h1>Bienvenido  <?php echo $name;  ?> </h1>
-        <a href="../sesion/act_datos/agg.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar disco</span></a>
-        <a href="../sesion/act_datos/musica.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar músicias</span></a>
-        <a href="../index.php" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xe5d2;</i> <span>Menu principal</span></a>
-        <a href="../sesion/cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe8ac;</i> <span>Cerrar sesión</span></a>
+        <h1>Welcome,  <?php echo $name;  ?></h1>
+        <a href="../sesion/act_datos/agg.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add (disco)</span></a>
+        <a href="../sesion/act_datos/musica.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add (musicas)</span></a>
+        <a href="../index.php" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xe5d2;</i> <span>Main Menu</span></a>
+        <a href="../sesion/cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe8ac;</i> <span>Log out</span></a>
     </div>
 </body>
 

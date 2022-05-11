@@ -1,6 +1,6 @@
 <?php
 	if (empty($_POST['delete_id'])){
-		$errors[] = "Id vacío.";
+		$errors[] = "ID field must not be empty.";
 	} elseif (!empty($_POST['delete_id'])){
 	require_once ("../../conexion.php");//Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
@@ -12,14 +12,14 @@
     $query = mysqli_query($con,$sql);
     // if product has been added successfully
     if ($query) {
-        $messages[] = "El producto ha sido eliminado con éxito.";
+        $messages[] = "The (disco) has been deleted successfully.";
     } else {
-        $errors[] = "Lo sentimos, la eliminación falló. Por favor, regrese y vuelva a intentarlo.";
+        $errors[] = "Deletion failed. Please try again.";
     }
 		
 	} else 
 	{
-		$errors[] = "desconocido.";
+		$errors[] = "Unknown.";
 	}
 if (isset($errors)){
 			
@@ -40,7 +40,7 @@ if (isset($errors)){
 				?>
 				<div class="alert alert-success" role="alert">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong>¡Bien hecho!</strong>
+						<strong>Completed.</strong>
 						<?php
 							foreach ($messages as $message) {
 									echo $message;

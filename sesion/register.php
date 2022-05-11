@@ -32,12 +32,12 @@ session_start();
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         
-        $nombre = $_POST['usernamesignup'];
+        $nombre = $_POST['completeName'];
+        $username = $_POST['usernamesignup'];
         $mail = $_POST['emailsignup'];
         $celular = $_POST['celular'];
         $clave = $_POST['passwordsignup'];
         $clave2 = $_POST['passwordsignup_confirm'];
-
         $clave = hash('sha512', $clave);
         $clave2 = hash('sha512', $clave2);
        
@@ -46,13 +46,13 @@ session_start();
     
             try{
                 // $conexion = new PDO('mysql:host=dontcompy.ipagemysql.com;dbname=patrocinio_db', 'appalda', 'aldaapp01');
-                $conexion = new PDO('mysql:host=localhost;dbname=musico_db', 'root', '');
+                $conexion = new PDO('mysql:host=localhost;dbname=ecommerce_db', 'root', '');
             }catch(PDOException $prueba_error){
                 echo "Error: " . $prueba_error->getMessage();
             }
 
-            $statement = $conexion->prepare('SELECT * FROM musico WHERE nombre = :nombre LIMIT 1');
-            $statement->execute(array(':nombre' => $nombre));
+            $statement = $conexion->prepare('SELECT * FROM user WHERE username = :username LIMIT 1');
+            $statement->execute(array(':username' => $username));
             $resultado = $statement->fetch();
             
                         
@@ -68,9 +68,10 @@ session_start();
         
      
         if ($error == ''){
-            $statement = $conexion->prepare('INSERT INTO musico( nombre, pass, celular,email) VALUES (:nombre,:clave,:celular,:mail)');
+            $query = 'INSERT INTO user( username, password,name, cel,email) VALUES (:username,:clave,:nombre,:celular,:mail)';
+            $statement = $conexion->prepare($query);
             $statement->execute(array(
-                
+                ':username' => $username,
                 ':nombre' => $nombre,
                 ':clave' => $clave,
                 ':celular' => $celular,

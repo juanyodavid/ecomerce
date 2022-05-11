@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+session_start();
 
 if(isset($_SESSION['nombre'])){
     $ban = true;
@@ -6,12 +7,16 @@ if(isset($_SESSION['nombre'])){
 ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Obras pilarenses</title>
-		<link rel="shortcut icon" href="../favicon.ico">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Obras pilarenses</title>
+    <meta name="description" content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
+    <meta name="keywords" content="sidebar, off-canvas, menu, navigation, effect, inspiration, css transition, SVG, morphing, animation" />
+    <meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/normalize1.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
@@ -24,14 +29,15 @@ if(isset($_SESSION['nombre'])){
 		<link rel="stylesheet" type="text/css" href="css/style3.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css' />
 		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
-		<!--[if IE]>
-  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="container">
-			<div class="menu-wrap">
-				<nav class="menu">
+
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu-wrap">
+		<nav class="menu">
 					<div class="icon-list">
 						<a href="#musicos"><i class="material-icons people"></i><span>Artistas</span></a>
 						<a href="#discos"><i class="material-icons speaker_group"></i><span>Discos</span></a>
@@ -43,87 +49,73 @@ if(isset($_SESSION['nombre'])){
 						<a href="../sesion/login/index.html" ><i class="fa fa-fw fa-user"></i><span>Iniciar sesión</span></a><?php } ?>
 					</div>
 				</nav>
-			</div>
-			<button class="menu-button" id="open-button"></button>
-			<div class="content-wrap">
-				<div class="content">
-					<header class="codrops-header">
-						<div class="codrops-links">
-							<!-- <a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/TabStylesInspiration/"><span>Previous Demo</span></a>
+        </div>
+        <button class="menu-button" id="open-button"></button>
+        <div class="content-wrap">
+            <div class="content">
+                <header class="codrops-header">
+                    <div class="codrops-links">
+                        <!-- <a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/TabStylesInspiration/"><span>Previous Demo</span></a>
 							<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=20100"><span>Back to the Codrops Article</span></a> -->
-						</div>
-						<h1 id="discos">Obras de músicos <span>Pilarenses</span></h1>
-						<nav class="codrops-demos">
-						
-						</nav>
-						<h1>Discos:</h1>
-					</header>
-					<section class="main">
-						<ul class="ch-grid">
-			<?php 
-			$finales = 0;
-			$con = mysqli_connect('localhost','root','', 'musico_db');//esto se conecta con la base de datos
-			$consulta = "SELECT * FROM disco WHERE 1" ;
-			$query = mysqli_query($con,$consulta);
-			while($row = mysqli_fetch_array($query)){	
-				$id=$row['id_disco'];
-				$nombre=$row['nombre'];
-				$musico=$row['id_musico'];
-				$genero=$row['genero'];
-				$link = $row['link'];
-				$foto = $row['foto'];
-				$consulta2 = "SELECT nombre FROM musico WHERE id_musico= '".$musico."' " ;
-				if ($sql = mysqli_query($con, $consulta2)) {
-					$row = mysqli_fetch_array($sql);
-					$musicoo = $row['nombre'];}
-				$finales++;
-			?>
-						
-							<?php ?>
-							<li>
-								<div class="ch-item">	
-									<div class="ch-info">
-										<h3><?php echo $nombre ?></h3>
-										<p>de <?php echo $musicoo; ?> <a href="<?php echo $link; ?>">Escuchar disco</a></p>
-									</div>
-									<div class="ch-thumb ch-img-2" style="background-image: url(../sesion/act_datos/ajax/agg_ajax/images/<?php echo $foto; ?>); "></div>
-								</div>
-							</li>
-							<?php } ?>
-							
-							
-						</ul>
-						
-					</section>
-					<!-- Related demos -->
-					<section class="related">
-						<p id="musicos">Si te han gustado los discos, aqui puedes ver algunos <strong style="color:green";>artistas</strong></p>
-						<?php 
-	
-			$consulta = "SELECT * FROM musico WHERE 1" ;
-			$query2 = mysqli_query($con,$consulta);
-			while($row = mysqli_fetch_array($query2)){	
-			
-				$nombre=$row['nombre'];
-				$email=$row['email'];
-				$celular=$row['celular'];
+                    </div>
+                    <h1>Obras de músicos <span>Pilarenses</span></h1>
+                    <nav class="codrops-demos">
 
-				
-			?>
-						<a href="mailto:<?php echo $email; ?>">
-						
-							<img src="img/related/sidebartransitions.png" />
-							<h3>Nombre: <?php echo $nombre; ?></h3>
-							<h3>Correo: <?php echo $email; ?></h3>
-							<h3>Celular: <?php echo $celular ; ?></h3>
-						</a>
-							<?php } ?>
-						
-					</section>
-				</div>
-			</div><!-- /content-wrap -->
-		</div><!-- /container -->
-		<script src="js/classie.js"></script>
-		<script src="js/main.js"></script>
-	</body>
+                    </nav>
+                    <p>As seen in the <a href="http://tympanus.net/Development/ButtonComponentMorph/index7.html">Morphing Buttons Concept</a></p>
+                </header>
+                <section class="main">
+
+                    <ul class="ch-grid">
+                        <li>
+                            <div class="ch-item">
+                                <div class="ch-info">
+                                    <h3>Music poster</h3>
+                                    <p>by Jonathan Quintin <a href="http://drbl.in/eGjw">View on Dribbble</a></p>
+                                </div>
+                                <div class="ch-thumb ch-img-1"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch-item">
+                                <div class="ch-info">
+                                    <h3>Beer Poster 2</h3>
+                                    <p>by Jon Gerlach <a href="http://drbl.in/eFWR">View on Dribbble</a></p>
+                                </div>
+                                <div class="ch-thumb ch-img-2"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch-item">
+                                <div class="ch-info">
+                                    <h3>Devi Tara</h3>
+                                    <p>by Kawal Oberoi <a href="http://drbl.in/eFED">View on Dribbble</a></p>
+                                </div>
+                                <div class="ch-thumb ch-img-3"></div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </section>
+                <!-- Related demos -->
+                <section class="related">
+                    <p>If you enjoyed this demo you might also like:</p>
+                    <a href="http://tympanus.net/Development/SidebarTransitions/">
+                        <img src="img/related/sidebartransitions.png" />
+                        <h3>Transitions for Off-Canvas Navigations</h3>
+                    </a>
+                    <a href="http://tympanus.net/Development/PerspectivePageViewNavigation/">
+                        <img src="img/related/PerspectiveNavigation.png" />
+                        <h3>Perspective Page View Navigation</h3>
+                    </a>
+                </section>
+            </div>
+        </div>
+        <!-- /content-wrap -->
+    </div>
+    <!-- /container -->
+    <script src="js/classie.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>

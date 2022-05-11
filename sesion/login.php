@@ -36,13 +36,13 @@ session_start();
         $clave = hash('sha512', $clave);
 
         try{
-            $conexion = new PDO('mysql:host=localhost;dbname=musico_db', 'root', '');
+            $conexion = new PDO('mysql:host=localhost;dbname=ecommerce_db', 'root', '');
             }catch(PDOException $prueba_error){
                 echo "Error: " . $prueba_error->getMessage(); ////aca hay un echo
             }
            
    
-        $statement = $conexion->prepare('SELECT * FROM musico WHERE nombre = :nombre AND pass = :clave' );
+        $statement = $conexion->prepare('SELECT * FROM user WHERE username = :nombre AND password = :clave' );
         
         $statement->execute(array(
             ':nombre' => $nombre,
@@ -52,8 +52,8 @@ session_start();
         $resultado = $statement->fetch();
          if ($resultado !== false){
         // ESTA PARTE MUESTRA COMO ESTIRAR UN VALOR DE LA BASE DE DATOS
-        $conn = mysqli_connect('localhost','root','', 'musico_db');
-        $consulta = "SELECT * FROM musico WHERE nombre = '".$nombre."'" ;
+        $conn = mysqli_connect('localhost','root','', 'ecommerce_db');
+        $consulta = "SELECT * FROM user WHERE username = '".$nombre."'" ;
         if($sql = mysqli_query($conn,$consulta)){
          $_SESSION['nombre'] = $nombre;
            header('location: principal.php');  
@@ -63,7 +63,7 @@ session_start();
         }
        
     }
-  echo $error; 
+  echo $consulta; 
 
 
 ?>

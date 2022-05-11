@@ -51,7 +51,7 @@ session_start();
 
         $resultado = $statement->fetch();
          if ($resultado !== false){
-        // ESTA PARTE MUESTRA COMO ESTIRAR UN VALOR DE LA BASE DE DATOS
+        // ESTA PARTE MUESTRA COMO ESTIRAR UN VALOR DE LA BASE DE DATOS ae
         $conn = mysqli_connect('localhost','root','', 'ecommerce_db');
         $consulta = "SELECT * FROM user WHERE username = '".$nombre."'" ;
         if($sql = mysqli_query($conn,$consulta)){

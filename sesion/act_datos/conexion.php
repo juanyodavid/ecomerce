@@ -1,14 +1,9 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
-    // DB credentials.
+
 	define('DB_HOST','localhost');
 	define('DB_USER','root');
 	define('DB_PASS','');
-	define('DB_NAME','musico_db');
+	define('DB_NAME','ecommerce_db');
 	# conectare la base de datos
     $con=@mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     if(!$con){

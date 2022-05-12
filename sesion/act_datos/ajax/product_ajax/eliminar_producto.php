@@ -4,17 +4,18 @@
 	} elseif (!empty($_POST['delete_id'])){
 	require_once ("../../conexion.php");//Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
-    $disco=intval($_POST['delete_id']);
+    $product=intval($_POST['delete_id']);
 	
 
 	// DELETE FROM  database
-    $sql = "DELETE FROM  disco WHERE id_disco='$disco'";// dps FROM  va la tabla y dps el campo de la tabla
-    $query = mysqli_query($con,$sql);
+    $sql = "DELETE FROM  product WHERE id_product='$product'";// dps FROM  va la tabla y dps el campo de la tabla
+
+	$query = mysqli_query($con,$sql);
     // if product has been added successfully
     if ($query) {
-        $messages[] = "The (disco) has been deleted successfully.";
+        $messages[] = "The product has been deleted successfully.";
     } else {
-        $errors[] = "Deletion failed. Please try again.";
+        $errors[] = "Sorry, something went wrong, please try again.";
     }
 		
 	} else 
@@ -40,7 +41,7 @@ if (isset($errors)){
 				?>
 				<div class="alert alert-success" role="alert">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong>Completed.</strong>
+						<strong>¡Well done!</strong>
 						<?php
 							foreach ($messages as $message) {
 									echo $message;

@@ -19,9 +19,6 @@
     * Please use your account
     * Username : xxx@xxx.xxx.xx  Password : xxxx
 7. Create merge request
-8. Screenshot of the current README.md content (including your student ID) 
-9. Screenshot of the current directory status (including files added by yourself)
-10. Upload two screenshots to moodle
 
 ## Student ID
 1. M11015034

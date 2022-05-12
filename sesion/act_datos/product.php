@@ -50,7 +50,7 @@
 
             <div class='clearfix'></div>
             <hr>
-            <div id="loader"></div>Carga de datos ajax aqui
+            <div id="loader"></div><!-- Carga de datos ajax aqui -->
             <div id="resultados"></div><!-- Carga de datos ajax aqui -->
             <div class='outer_div'></div><!-- Carga de datos ajax aqui -->
         </div>

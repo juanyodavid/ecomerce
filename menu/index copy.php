@@ -36,11 +36,11 @@
 					<div class="icon-list">
 						<a href="#musicos"><i class="material-icons people"></i><span>Artistas</span></a>
 						<a href="#discos"><i class="material-icons speaker_group"></i><span>Discos</span></a>
-					<?php if ($ban == true) { ?>	<a href="../sesion/act_datos/agg.php"><i class="fa fa-fw fa-bar-chart-o"></i><span>Ver mis discos</span></a>
+					<?php if ($ban == true) { ?>	<a href="../sesion/act_datos/product.php"><i class="fa fa-fw fa-bar-chart-o"></i><span>Ver mis discos</span></a>
 						<a href="../sesion/act_datos/musica.php"><i class="material-icons playlist_add"></i><span>Agregar un disco</span></a>
 						<a href="../sesion/act_datos/musica.php"><i class="material-icons my_library_add"></i><span>Agregar música</span></a>
 						<a href="../sesion/act_datos/musica.php"><i class="material-icons queue_music"></i><span>Ver mis musicas</span></a>
-						<a href="../sesion/cerrar.php" ><i class="fa fa-fw fa-user"></i><span>Cerrar sesión</span></a><?php } else{ ?>
+						<a href="../sesion/cerrar.php" ><i class="fa fa-fw fa-user"></i><span>Logout</span></a><?php } else{ ?>
 						<a href="../sesion/login/index.html" ><i class="fa fa-fw fa-user"></i><span>Iniciar sesión</span></a><?php } ?>
 					</div>
 				</nav>
@@ -87,7 +87,7 @@
 										<h3><?php echo $nombre ?></h3>
 										<p>de <?php echo $musicoo; ?> <a href="<?php echo $link; ?>">Escuchar disco</a></p>
 									</div>
-									<div class="ch-thumb ch-img-2" style="background-image: url(../sesion/act_datos/ajax/agg_ajax/images/<?php echo $foto; ?>); "></div>
+									<div class="ch-thumb ch-img-2" style="background-image: url(../sesion/act_datos/ajax/product_ajax/images/<?php echo $foto; ?>); "></div>
 								</div>
 							</li>
 							<?php //} ?> -->

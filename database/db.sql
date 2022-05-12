@@ -30,6 +30,7 @@ CREATE TABLE `product` (
   `id_product` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `price` int(11) NOT NULL,
+  `description` varchar(500) ,
   index(id_product),
   PRIMARY KEY (`id_product`),
   `id_category` int(11) NOT NULL,
@@ -73,4 +74,14 @@ CREATE TABLE `purchase` (
   REFERENCES cart(id_cart) on delete no action on update cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
+CREATE TABLE `image` (  
+  `id_image` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(127) NOT NULL,
+  `tag` varchar(64),
+  index(id_image),
+  PRIMARY KEY (`id_image`),
+  `id_product` int(11) ,
+  constraint imageProduct
+  foreign key id_product_image (id_product)
+  references product (id_product) on delete cascade on update cascade
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

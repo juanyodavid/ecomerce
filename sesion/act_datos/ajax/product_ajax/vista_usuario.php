@@ -5,23 +5,20 @@
 	session_start();
 
 	if(isset($_SESSION['nombre'])){
-		$ban = $_SESSION['nombre'];
-	}else $ban = '0';
-	$consulta2 = "SELECT id_musico FROM musico WHERE nombre= '".$ban."' " ;
-	if ($sql = mysqli_query($con, $consulta2)) {
-		$row = mysqli_fetch_array($sql);
-		$musicoo = $row['id_musico'];}
+		$vendedor = $_SESSION['identification'];
+	}
+	
 	
 	
 $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 if($action == 'ajax'){
 	$query = mysqli_real_escape_string($con,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
 
-	$tables="disco";
+	$tables="product";
 	$campos="*";
-	$sWhere="disco.nombre LIKE '%".$query."%'";
-	$sWhere.=" order by disco.id_disco";
-	$constraint=" id_musico = '".$musicoo."'  ";
+	$sWhere="product.name LIKE '%".$query."%'";
+	$sWhere.=" order by product.id_product DESC";
+	$constraint=" id_seller = '".$vendedor."'  ";
 	
 	
 	
@@ -51,11 +48,12 @@ if($action == 'ajax'){
 				<thead>
 
 					<tr>
-						<th class='text-center'>ID del disco</th>  
-						<th class='text-center'>Nombre </th>
-						<th class='text-center'>Género </th>
-						<th class='text-center'>Instrumentos </th>
-						<th class='text-center'>Escuchar disco </th>
+						<th class='text-center'>Product ID</th>  
+						<th class='text-center'>Name </th>
+						<th class='text-center'>Price </th>
+						<th class='text-center'>Description </th>
+						<th class='text-center'>Category </th>
+						<th class='text-center'>Image </th>
 
 
 						<th></th>
@@ -65,23 +63,38 @@ if($action == 'ajax'){
 						<?php 
 						$finales=0;
 						while($row = mysqli_fetch_array($query)){	
-							$id=$row['id_disco'];
-							$nombre=$row['nombre'];
-							$genero=$row['genero'];
-							$inst = $row['instrumento'];
-							$link = $row['link'];
+							$id=$row['id_product'];
+							$nombre=$row['name'];
+							$price=$row['price'];
+							$desc = $row['description'];
+							$cat = $row['id_category'];
 							$finales++;
+
+							$consulta = "SELECT `name` FROM category where id_category = ".$cat." ";
+							$query2 =mysqli_query($con,$consulta);
+							$valores = mysqli_fetch_array($query2);
+							$cat = $valores['name'];	
+
+							$consulta = "SELECT `name` FROM `image` where id_product = ".$id." ";
+							$query2 =mysqli_query($con,$consulta);
+							$valores = mysqli_fetch_array($query2);
+							$link =  $valores['name'];
+							 
+							 
 						?>	
 						<tr >
 							<td class='text-center'><?php echo $id;?></td>
 							<td class='text-center'><?php echo $nombre;?></td>
-							<td class='text-center'><?php echo $genero;?></td>
-							<td class='text-center'><?php echo $inst;?></td>
-							<td class='text-center'><a href="<?php echo $link;?>" target="_blank">Ir</a></td>
+							<td class='text-center'><?php echo $price;?> NT$</td>
+							<td class='text-center'><?php echo $desc;?></td>
+							<td class='text-center'><?php echo $cat;?></td>
+							<td class='text-center'><a href="ajax/product_ajax/images/<?php echo $link;?>">See image</a></td>
+
+
 							                            
 						<td>
 							
-							 <a href="#"data-target="#editProductModal" class="edit" data-toggle="modal" data-id="<?php echo $id;?>" data-nomap="<?php echo $nombre;?>" data-genero = "<?php echo $genero; ?>"data-inst = "<?php echo $inst; ?>" data-link = "<?php echo $link; ?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
+							 <a href="#"data-target="#editProductModal" class="edit" data-toggle="modal" data-id="<?php echo $id;?>" data-nomap="<?php echo $nombre;?>" data-price = "<?php echo $price; ?>"data-desc = "<?php echo $desc; ?>" data-cat = "<?php echo $cat; ?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
 							 
 							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
                     		</td>

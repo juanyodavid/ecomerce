@@ -53,17 +53,20 @@ session_start();
          if ($resultado !== false){
         // ESTA PARTE MUESTRA COMO ESTIRAR UN VALOR DE LA BASE DE DATOS ae
         $conn = mysqli_connect('localhost','root','', 'ecommerce_db');
-        $consulta = "SELECT * FROM user WHERE username = '".$nombre."'" ;
+        $consulta = "SELECT `name`,`id_user` FROM user WHERE username = '".$nombre."'" ;
         if($sql = mysqli_query($conn,$consulta)){
-         $_SESSION['nombre'] = $nombre;
-           header('location: principal.php');  
+            $row = mysqli_fetch_array($sql);
+            $_SESSION['nombre'] = $nombre;
+            $_SESSION['allName'] = $row['name'];
+            $_SESSION['identification'] = $row['id_user'];
+            header('location: principal.php');  
          }
           }else{
              $error .= '<h2><p style="color:#FF0000";>Este nombre no existe o los datos no coinciden</p><h2>';
         }
        
     }
-  echo $consulta; 
+  echo $sql; 
 
 
 ?>

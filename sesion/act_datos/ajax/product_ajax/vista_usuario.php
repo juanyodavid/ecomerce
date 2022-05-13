@@ -107,7 +107,7 @@ if($action == 'ajax'){
 								<?php 
 									$inicios=$offset+1;
 									$finales+=$inicios -1;
-									echo "Mostrando $inicios al $finales de $numrows registros";
+									echo "Showing $inicios - $finales of $numrows entries";
 									echo paginate( $page, $total_pages, $adjacents);
 								?>
 							</td>

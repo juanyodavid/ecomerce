@@ -19,7 +19,7 @@
 
 <body>
 <div class="welcome">
-        <h1  style="color:#FF0000";>Error al ingresar</h1>
+        <h1  style="color:#FF0000";>Login error</h1>
 <?php  
 session_start();
 
@@ -37,10 +37,9 @@ session_start();
 
         try{
             $conexion = new PDO('mysql:host=localhost;dbname=ecommerce_db', 'root', '');
-            }catch(PDOException $prueba_error){
-                echo "Error: " . $prueba_error->getMessage(); ////aca hay un echo
-            }
-           
+        } catch(PDOException $prueba_error){
+            echo "Error: " . $prueba_error->getMessage(); ////aca hay un echo
+        }
    
         $statement = $conexion->prepare('SELECT * FROM user WHERE username = :nombre AND password = :clave' );
         
@@ -71,9 +70,9 @@ session_start();
 
 ?>
     
-        <a href="<?=$_SERVER["HTTP_REFERER"]?>" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Volver a intentar</span></a>
-        <a href="../menu" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Volver al menu principal</span></a>
-        <a href='javascript:window.location.href = "login/index.html#toregister";' class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Crear un usuario</span></a>
+        <a href="<?=$_SERVER["HTTP_REFERER"]?>" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Try again</span></a>
+        <a href="../menu" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Back to main menu</span></a>
+        <a href='javascript:window.location.href = "login/index.html#toregister";' class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Create user</span></a>
     </div>
    </body>
 </html>

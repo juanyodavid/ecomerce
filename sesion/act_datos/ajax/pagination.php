@@ -1,7 +1,7 @@
 <?php
 function paginate($page, $tpages, $adjacents) {
-	$prevlabel = "&lsaquo; Anterior";
-	$nextlabel = "Siguiente &rsaquo;";
+	$prevlabel = "&lsaquo; Previous";
+	$nextlabel = "Next &rsaquo;";
 	$out = '<ul class="pagination   pull-right">';
 	
 	// previous label

@@ -1,6 +1,6 @@
 <?php
 	if (empty($_POST['delete_id'])){
-		$errors[] = "Id vacío.";
+		$errors[] = "ID field must not be empty.";
 	} elseif (!empty($_POST['delete_id'])){
 	require_once ("../../conexion.php");//Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
@@ -20,7 +20,7 @@
 		
 	} else 
 	{
-		$errors[] = "desconocido.";
+		$errors[] = "Unknown.";
 	}
 if (isset($errors)){
 			

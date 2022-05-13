@@ -13,7 +13,7 @@ $name = $_SESSION['allName'];
 
 <head>
     <meta charset="UTF-8">
-    <title>Administracion Tareas</title>
+    <title>E-Commerce</title>
     <link rel="stylesheet" href="../css/ppl.css"><!-- hasta aca carga las librerias -->
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">

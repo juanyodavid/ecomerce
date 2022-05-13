@@ -14,12 +14,12 @@ if (empty($_POST['edit_id'])) {
 	$query = mysqli_query($con, $sql);
 	// if product has been added successfully
 	if ($query) {
-		$messages[] = "Actualización exitosa.";
+		$messages[] = "Update successful.";
 	} else {
-		$errors[] = "Actualización fallida.";
+		$errors[] = "Update failed.";
 	}
 } else {
-	$errors[] = "desconocido.";
+	$errors[] = "Unknown";
 }
 if (isset($errors)) {
 
@@ -40,7 +40,7 @@ if (isset($messages)) {
 ?>
 	<div class="alert alert-success" role="alert">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<strong>Concretada.</strong>
+		<strong>Completed.</strong>
 		<?php
 		foreach ($messages as $message) {
 			echo $message;

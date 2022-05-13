@@ -29,7 +29,7 @@
                         <a href="../cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe8ac;</i> <span>Logout</span></a>
                         <a href="../act_datos/product.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar disco</span></a>
 
-                        <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar música</span></a>
+                        <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add música</span></a>
                       <?php if(isset($_SERVER["HTTP_REFERER"])) { ?> <a href="<?=$_SERVER["HTTP_REFERER"]?>" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xe5c4;</i> <span>Atrás</span>
                         </a><?php } ?>
                     </div>

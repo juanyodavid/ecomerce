@@ -14,15 +14,9 @@ if (empty($_POST['edit_id'])) {
 	$query = mysqli_query($con, $sql);
 	// if product has been added successfully
 	if ($query) {
-<<<<<<< HEAD
 		$messages[] = "The update has been successful.";
 	} else {
 		$errors[] = "The update has failed.";
-=======
-		$messages[] = "Edit successful.";
-	} else {
-		$errors[] = "Edit failed.";
->>>>>>> 93dd3e16f5e2b596bb9a8004c095fae814fffb45
 	}
 } else {
 	$errors[] = "Unknown.";
@@ -46,11 +40,7 @@ if (isset($messages)) {
 ?>
 	<div class="alert alert-success" role="alert">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
-<<<<<<< HEAD
 		<strong>Finished!</strong>
-=======
-		<strong>Completed.</strong>
->>>>>>> 93dd3e16f5e2b596bb9a8004c095fae814fffb45
 		<?php
 		foreach ($messages as $message) {
 			echo $message;

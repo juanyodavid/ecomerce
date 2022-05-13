@@ -75,11 +75,11 @@ if($action == 'ajax'){
 							$valores = mysqli_fetch_array($query2);
 							$cat = $valores['name'];	
 
+
 							$consulta = "SELECT `name` FROM `image` where id_product = ".$id." ";
 							$query2 =mysqli_query($con,$consulta);
 							$valores = mysqli_fetch_array($query2);
 							$link =  $valores['name'];
-							 
 							 
 						?>	
 						<tr >
@@ -98,10 +98,6 @@ if($action == 'ajax'){
 							 
 							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
                     		</td>
-							
-							
-							
-							
 							
 							
 						</tr>

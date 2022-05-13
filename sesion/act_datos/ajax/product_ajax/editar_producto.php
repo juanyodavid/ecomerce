@@ -5,18 +5,18 @@ if (empty($_POST['edit_id'])) {
 	require_once("../../conexion.php"); //Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
 	$nomap = mysqli_real_escape_string($con, (strip_tags($_POST["nomap_edit"], ENT_QUOTES)));
-	$link = mysqli_real_escape_string($con, (strip_tags($_POST["link_edit"], ENT_QUOTES)));
-	$inst = mysqli_real_escape_string($con, (strip_tags($_POST["inst_edit"], ENT_QUOTES)));
-	$genero = mysqli_real_escape_string($con, (strip_tags($_POST["genero_edit"], ENT_QUOTES)));
+	$desc = mysqli_real_escape_string($con, (strip_tags($_POST["desc_edit"], ENT_QUOTES)));
+	$price = mysqli_real_escape_string($con, (strip_tags($_POST["price_edit"], ENT_QUOTES)));
+	$cat = mysqli_real_escape_string($con, (strip_tags($_POST["cat_edit"], ENT_QUOTES)));
 	$id = intval($_POST['edit_id']);	// UPDATE data into database
 	
-	$sql = "UPDATE disco SET nombre='" . $nomap . "',     link='" . $link . "', instrumento='" . $inst . "', genero='" . $genero . "' WHERE id_disco='" . $id . "' ";
+	$sql = "UPDATE product SET name='" . $nomap . "',     description='" . $desc . "', price='" . $price . "', id_category='" . $cat . "' WHERE id_product='" . $id . "' ";
 	$query = mysqli_query($con, $sql);
 	// if product has been added successfully
 	if ($query) {
-		$messages[] = "Actualización exitosa.";
+		$messages[] = "The update has been successful.";
 	} else {
-		$errors[] = "Actualización fallida.";
+		$errors[] = "The update has failed.";
 	}
 } else {
 	$errors[] = "desconocido.";
@@ -40,7 +40,7 @@ if (isset($messages)) {
 ?>
 	<div class="alert alert-success" role="alert">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<strong>Concretada.</strong>
+		<strong>Finished!</strong>
 		<?php
 		foreach ($messages as $message) {
 			echo $message;

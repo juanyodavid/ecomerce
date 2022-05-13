@@ -27,18 +27,18 @@ function load(page) {
 $("#editProductModal").on("show.bs.modal", function(event) {
     var button = $(event.relatedTarget); // Button that triggered the modal
 
-    var nomap = button.data("nomap"); // crea la variable lote_edit
+    var nomap = button.data("nomap"); // 
     $("#nomap_edit").val(nomap);
 
 
-    var price = button.data("price"); // crea la variable lote_edit
+    var price = button.data("price"); // 
     $("#price_edit").val(price);
 
 
 
-    var cat = button.data("cat"); // crea la variable lote_edit
+    var cat = button.data("cat"); // 
     $("#cat_edit").val(cat);
-    var desc = button.data("desc"); // crea la variable lote_edit
+    var desc = button.data("desc"); // 
     $("#desc_edit").val(desc);
 
     var id = button.data("id");

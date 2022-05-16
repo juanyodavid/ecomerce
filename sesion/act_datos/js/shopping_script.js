@@ -4,7 +4,7 @@ $(function() {
 
 function load(page) {
     var query = $("#q").val();
-    var per_page = 15;
+    var per_page = 10;
     var parametros = {
         action: "ajax",
         page: page,
@@ -13,7 +13,7 @@ function load(page) {
     };
     $("#loader").fadeIn("slow");
     $.ajax({
-        url: "ajax/product_ajax/vista_usuario.php",
+        url: "ajax/shopping_ajax/vista_usuario.php",
         data: parametros,
         beforeSend: function(objeto) {
             $("#loader").html("Cargando...");
@@ -27,19 +27,15 @@ function load(page) {
 $("#editProductModal").on("show.bs.modal", function(event) {
     var button = $(event.relatedTarget); // Button that triggered the modal
 
-    var nomap = button.data("nomap"); // 
+    var nomap = button.data("nomap"); // crea la variable lote_edit
     $("#nomap_edit").val(nomap);
+    var link = button.data("link"); // crea la variable lote_edit
+    $("#link_edit").val(link);
+    var disco = button.data("disco"); // crea la variable lote_edit
+    $("#disco_edit").val(disco);
+    var genero = button.data("genero"); // crea la variable lote_edit
+    $("#genero_edit").val(genero);
 
-
-    var price = button.data("price"); // 
-    $("#price_edit").val(price);
-
-
-
-    var cat = button.data("cat"); // 
-    $("#cat_edit").val(cat);
-    var desc = button.data("desc"); // 
-    $("#desc_edit").val(desc);
 
     var id = button.data("id");
     $("#edit_id").val(id);
@@ -55,10 +51,10 @@ $("#edit_product").submit(function(event) {
     var parametros = $(this).serialize();
     $.ajax({
         type: "POST",
-        url: "ajax/product_ajax/editar_producto.php",
+        url: "ajax/shopping_ajax/editar_producto.php",
         data: parametros,
         beforeSend: function(objeto) {
-            $("#resultados").html("Loading...");
+            $("#resultados").html("Enviando...");
         },
         success: function(datos) {
             $("#resultados").html(datos);
@@ -69,16 +65,32 @@ $("#edit_product").submit(function(event) {
     event.preventDefault();
 });
 
-
+$("#add_product").submit(function(event) {
+    var parametros = $(this).serialize();
+    $.ajax({
+        type: "POST",
+        url: "ajax/shopping_ajax/guardar_producto.php",
+        data: parametros,
+        beforeSend: function(objeto) {
+            $("#resultados").html("Enviando...");
+        },
+        success: function(datos) {
+            $("#resultados").html(datos);
+            load(1);
+            $("#addProductModal").modal("hide");
+        }
+    });
+    event.preventDefault();
+});
 
 $("#delete_product").submit(function(event) {
     var parametros = $(this).serialize();
     $.ajax({
         type: "POST",
-        url: "ajax/product_ajax/eliminar_producto.php",
+        url: "ajax/shopping_ajax/eliminar_producto.php",
         data: parametros,
         beforeSend: function(objeto) {
-            $("#resultados").html("Loading...");
+            $("#resultados").html("Enviando...");
         },
         success: function(datos) {
                 $("#resultados").html(datos);

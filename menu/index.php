@@ -1,6 +1,6 @@
 <?php 
 session_start();
-
+require_once("../conexion.php");
 if(isset($_SESSION['nombre'])){
     $ban = true;
 }else $ban = false;
@@ -30,7 +30,6 @@ if(isset($_SESSION['nombre'])){
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css' />
 		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
 
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 
 </head>
 
@@ -39,14 +38,17 @@ if(isset($_SESSION['nombre'])){
         <div class="menu-wrap">
 		<nav class="menu">
 					<div class="icon-list">
-						<a href="#musicos"><i class="material-icons people"></i><span>Artistas</span></a>
-						<a href="#discos"><i class="material-icons speaker_group"></i><span>Discos</span></a>
-					<?php if ($ban == true) { ?>	<a href="../sesion/act_datos/product.php"><i class="fa fa-fw fa-bar-chart-o"></i><span>Ver mis discos</span></a>
-						<a href="../sesion/act_datos/musica.php"><i class="material-icons playlist_add"></i><span>Agregar un disco</span></a>
-						<a href="../sesion/act_datos/musica.php"><i class="material-icons my_library_add"></i><span>Agregar música</span></a>
-						<a href="../sesion/act_datos/musica.php"><i class="material-icons queue_music"></i><span>Ver mis musicas</span></a>
+						<!-- <a href="#musicos"><i class="material-icons people"></i><span>Artistas</span></a> -->
+						<!-- <a href="#discos"><i class="material-icons speaker_group"></i><span>Discos</span></a> -->
+					<?php if ($ban == true) { ?>	
+                        <a href="../sesion/act_datos/product.php"><i class="fa fa-fw fa-bar-chart-o"></i><span>See my products</span></a>
+						<a href="../sesion/act_datos/product.php" data-toggle="modal"><i class="material-icons playlist_add"></i><span>Add a new product</span></a>
+						<a href="../sesion/act_datos/shopping.php"><i class="material-icons my_library_add"></i><span>See my purchases</span></a>
+						<a href="../sesion/act_datos/sales.php"><i class="material-icons my_library_add"></i><span>See my sales</span></a>
+						<a href="../sesion/act_datos/cart.php"><i class="material-icons queue_music"></i><span>See my cart</span></a>
 						<a href="../sesion/cerrar.php" ><i class="fa fa-fw fa-user"></i><span>Logout</span></a><?php } else{ ?>
-						<a href="../sesion/login/index.html" ><i class="fa fa-fw fa-user"></i><span>Iniciar sesión</span></a><?php } ?>
+						<a href="../sesion/login/index.html#toregister" ><i class="fa fa-fw fa-user"></i><span>Register</span></a>
+						<a href="../sesion/login/index.html" ><i class="fa fa-fw fa-user"></i><span>Login</span></a><?php } ?>
 					</div>
 				</nav>
         </div>
@@ -55,10 +57,10 @@ if(isset($_SESSION['nombre'])){
             <div class="content">
                 <header class="codrops-header">
                     <div class="codrops-links">
-                        <!-- <a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/TabStylesInspiration/"><span>Previous Demo</span></a>
-							<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=20100"><span>Back to the Codrops Article</span></a> -->
+                        <a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/TabStylesInspiration/"><span>Previous Demo</span></a>
+							<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=20100"><span>Back to the Codrops Article</span></a>
                     </div>
-                    <h1>Obras de músicos <span>Pilarenses</span></h1>
+                    <h1>EJOGUA EASY <span>Taiwanese branch</span></h1>
                     <nav class="codrops-demos">
 
                     </nav>
@@ -67,33 +69,41 @@ if(isset($_SESSION['nombre'])){
                 <section class="main">
 
                     <ul class="ch-grid">
-                        <li>
-                            <div class="ch-item">
-                                <div class="ch-info">
-                                    <h3>Music poster</h3>
-                                    <p>by Jonathan Quintin <a href="http://drbl.in/eGjw">View on Dribbble</a></p>
-                                </div>
-                                <div class="ch-thumb ch-img-1"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ch-item">
-                                <div class="ch-info">
-                                    <h3>Beer Poster 2</h3>
-                                    <p>by Jon Gerlach <a href="http://drbl.in/eFWR">View on Dribbble</a></p>
-                                </div>
-                                <div class="ch-thumb ch-img-2"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ch-item">
-                                <div class="ch-info">
-                                    <h3>Devi Tara</h3>
-                                    <p>by Kawal Oberoi <a href="http://drbl.in/eFED">View on Dribbble</a></p>
-                                </div>
-                                <div class="ch-thumb ch-img-3"></div>
-                            </div>
-                        </li>
+
+                    <?php 
+			$finales = 0;
+			$consulta = "SELECT * FROM product" ;
+			$query = mysqli_query($con,$consulta);
+			while($row = mysqli_fetch_array($query)){	
+				$id=$row['id_product'];
+				$nombre=$row['name'];
+				$seller=$row['id_seller'];
+				$price=$row['price'];
+				$description = $row['description'];
+            $photoQ= "SELECT * FROM `image` where `id_product` = '$id'" ;
+            $query2 = mysqli_query($con,$photoQ);
+            $row = mysqli_fetch_array($query2);
+				$foto = $row['name'];
+				$consulta2 = "SELECT `name` FROM user WHERE id_user= '".$seller."' " ;
+				if ($sql = mysqli_query($con, $consulta2)) {
+					$row = mysqli_fetch_array($sql);
+					$user = $row['name'];}
+				$finales++;
+
+			?>
+
+
+
+							<li>
+								<div class="ch-item">	
+									<div class="ch-info">
+										<h3><?php echo $nombre ?></h3>
+										<p>by <?php echo $user; ?> <a href="<?php echo $link; ?>">Add to cart</a></p>
+									</div>
+									<div class="ch-thumb ch-info" style="background-image: url(../sesion/act_datos/ajax/product_ajax/images/<?php echo $foto; ?>); "></div>
+								</div>
+							</li>
+							<?php } ?>
                     </ul>
 
                 </section>

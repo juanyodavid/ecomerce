@@ -75,7 +75,7 @@ $("#delete_product").submit(function(event) {
     var parametros = $(this).serialize();
     $.ajax({
         type: "POST",
-        url: "ajax/product_ajax/eliminar_producto.php",
+        url: "ajax/cart_ajax/eliminar_producto.php",
         data: parametros,
         beforeSend: function(objeto) {
             $("#resultados").html("Loading...");

@@ -32,6 +32,7 @@ if($action == 'ajax'){
 	
 	include '../pagination.php'; //include pagination file
 	//pagination variables
+	$sum = 0;
 	$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
 	$per_page = intval($_REQUEST['per_page']); //how much records you want to show
 	$adjacents  = 4; //gap between pages after number of adjacents
@@ -58,9 +59,9 @@ if($action == 'ajax'){
 					<tr>
 						<th class='text-center'>Product ID</th>  
 						<th class='text-center'>Name </th>
-						<th class='text-center'>Price </th>
-						<th class='text-center'>Description </th>
 						<th class='text-center'>Category </th>
+						<th class='text-center'>Price </th>
+						<!-- <th class='text-center'>Description </th> -->
 						<!-- <th class='text-center'>Image </th> -->
 
 
@@ -83,6 +84,7 @@ if($action == 'ajax'){
 							$valores = mysqli_fetch_array($query2);
 							$cat = $valores['name'];
 							
+							$sum = $sum+$price;
 							/*
 							$consulta = "SELECT `name` FROM `image` where id_product = ".$id." ";
 							$query2 =mysqli_query($con,$consulta);
@@ -93,26 +95,19 @@ if($action == 'ajax'){
 						<tr >
 							<td class='text-center'><?php echo $id;?></td>
 							<td class='text-center'><?php echo $nombre;?></td>
-							<td class='text-center'><?php echo $price;?> NT$</td>
-							<td class='text-center'><?php echo $desc;?></td>
 							<td class='text-center'><?php echo $cat;?></td>
+							<td class='text-center'><?php echo $price;?> NT$</td>
+
+							<!--<td class='text-center'><?php //echo $desc;?></td>-->
 							<!-- <td class='text-center'><a href="ajax/product_ajax/images/<?php //echo $link;?>">See image</a></td> -->
-
-
-							                            
-						<td>
-							
+                        
+							<td>
 							<!--<a href="#"data-target="#editProductModal" class="edit" data-toggle="modal" data-id="<?php echo $id;?>" data-nomap="<?php echo $nombre;?>" data-price = "<?php echo $price; ?>"data-desc = "<?php echo $desc; ?>" data-cat = "<?php echo $cat; ?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a> -->
 							<!-- TODO - make this delete from the cart -->
 							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="remove from cart">&#xE872;</i></a>
                     		</td>
-							
-							
-							
-							
-							
-							
 						</tr>
+						
 						<?php }?>
 						<tr>
 							<td colspan='17'> 
@@ -124,7 +119,15 @@ if($action == 'ajax'){
 								?>
 							</td>
 						</tr>
-				</tbody>			
+				</tbody>
+				<tfoot>
+					<tr>
+						<td class='text-center'></td>
+						<td class='text-center'></td>
+						<td class='text-right'><?php echo "Total price:"; ?></td>
+						<td class = 'text-center'><?php echo "$sum"; ?></td>
+					</tr>
+				</tfoot>			
 			</table>
 		</div>	
 

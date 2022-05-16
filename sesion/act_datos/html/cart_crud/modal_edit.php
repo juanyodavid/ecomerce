@@ -41,6 +41,7 @@
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<input type="submit" class="btn btn-info" value="Save">
 					</div>
+				</div>
 			</form>
 		</div>
 	</div>

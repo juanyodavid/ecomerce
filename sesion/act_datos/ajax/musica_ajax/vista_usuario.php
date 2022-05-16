@@ -83,7 +83,7 @@ if($action == 'ajax'){
 							
 							 <a href="#"data-target="#editProductModal" class="edit" data-toggle="modal" data-id="<?php echo $id;?>" data-nomap="<?php echo $nombre;?>" data-genero = "<?php echo $genero; ?>"data-disco = "<?php echo $inst; ?>" data-link = "<?php echo $link; ?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
 							 
-							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
+							<a href="#"data-target="# deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
                     		</td>
 							
 							

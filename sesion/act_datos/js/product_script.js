@@ -4,7 +4,7 @@ $(function() {
 
 function load(page) {
     var query = $("#q").val();
-    var per_page = 15;
+    var per_page = 10;
     var parametros = {
         action: "ajax",
         page: page,

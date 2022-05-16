@@ -57,14 +57,14 @@ if(isset($_SESSION['nombre'])){
             <div class="content">
                 <header class="codrops-header">
                     <div class="codrops-links">
-                        <a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/TabStylesInspiration/"><span>Previous Demo</span></a>
-							<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=20100"><span>Back to the Codrops Article</span></a>
+                        <a class="codrops-icon codrops-icon-prev" href="#"><span>輕鬆購買</span></a>
+							<a class="codrops-icon codrops-icon-drop" href="#"><span>輕鬆銷售</span></a>
                     </div>
                     <h1>EJOGUA EASY <span>Taiwanese branch</span></h1>
                     <nav class="codrops-demos">
 
                     </nav>
-                    <p>As seen in the <a href="http://tympanus.net/Development/ButtonComponentMorph/index7.html">Morphing Buttons Concept</a></p>
+                    <p>The best website for <a href="https://imgur.com/a6hX0I7">Trading products</a></p>
                 </header>
                 <section class="main">
 
@@ -109,14 +109,11 @@ if(isset($_SESSION['nombre'])){
                 </section>
                 <!-- Related demos -->
                 <section class="related">
-                    <p>If you enjoyed this demo you might also like:</p>
-                    <a href="http://tympanus.net/Development/SidebarTransitions/">
-                        <img src="img/related/sidebartransitions.png" />
-                        <h3>Transitions for Off-Canvas Navigations</h3>
-                    </a>
+                    <p>If you enjoyed this products, you might also like:</p>
+                    
                     <a href="http://tympanus.net/Development/PerspectivePageViewNavigation/">
-                        <img src="img/related/PerspectiveNavigation.png" />
-                        <h3>Perspective Page View Navigation</h3>
+                        <img src="../sesion/act_datos/ajax/product_ajax/images/<?php echo $foto; ?>);" />
+                        <h3><?php echo $nombre ?></h3>
                     </a>
                 </section>
             </div>

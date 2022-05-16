@@ -12,14 +12,22 @@
 	
 $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 if($action == 'ajax'){
-	$query = mysqli_real_escape_string($con,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
+	//$query = mysqli_real_escape_string($con,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
 
+	//$campos="product.name, product.price,";
+	$campos = "*";
+	$tables="cart JOIN product ON cart.id_product = product.id_product";
+	$sWhere="cart.state = 1";
+	$sWhere.=" ORDER BY product.id_product DESC";
+	$constraint=" product.id_seller = '".$vendedor."'  ";
+	
+	/*
 	$tables="product";
 	$campos="*";
 	$sWhere="product.name LIKE '%".$query."%'";
 	$sWhere.=" order by product.id_product DESC";
 	$constraint=" id_seller = '".$vendedor."'  ";
-	
+	*/
 	
 	
 	include '../pagination.php'; //include pagination file
@@ -36,7 +44,7 @@ if($action == 'ajax'){
 	//main query to fetch the data
 	$consul = "SELECT $campos FROM  $tables where $constraint and $sWhere  LIMIT $offset,$per_page";
 	$query = mysqli_query($con,$consul);
-	// echo $consul;
+	//echo $consul;
 	//loop through fetched data
 	if ($numrows>0){
 		
@@ -53,7 +61,7 @@ if($action == 'ajax'){
 						<th class='text-center'>Price </th>
 						<th class='text-center'>Description </th>
 						<th class='text-center'>Category </th>
-						<th class='text-center'>Image </th>
+						<!-- <th class='text-center'>Image </th> -->
 
 
 						<th></th>
@@ -69,18 +77,18 @@ if($action == 'ajax'){
 							$desc = $row['description'];
 							$cat = $row['id_category'];
 							$finales++;
-
+							
 							$consulta = "SELECT `name` FROM category where id_category = ".$cat." ";
 							$query2 =mysqli_query($con,$consulta);
 							$valores = mysqli_fetch_array($query2);
-							$cat = $valores['name'];	
-
+							$cat = $valores['name'];
+							
+							/*
 							$consulta = "SELECT `name` FROM `image` where id_product = ".$id." ";
 							$query2 =mysqli_query($con,$consulta);
 							$valores = mysqli_fetch_array($query2);
 							$link =  $valores['name'];
-							 
-							 
+							*/
 						?>	
 						<tr >
 							<td class='text-center'><?php echo $id;?></td>
@@ -88,15 +96,15 @@ if($action == 'ajax'){
 							<td class='text-center'><?php echo $price;?> NT$</td>
 							<td class='text-center'><?php echo $desc;?></td>
 							<td class='text-center'><?php echo $cat;?></td>
-							<td class='text-center'><a href="ajax/product_ajax/images/<?php echo $link;?>">See image</a></td>
+							<!-- <td class='text-center'><a href="ajax/product_ajax/images/<?php //echo $link;?>">See image</a></td> -->
 
 
 							                            
 						<td>
 							
-							 <a href="#"data-target="#editProductModal" class="edit" data-toggle="modal" data-id="<?php echo $id;?>" data-nomap="<?php echo $nombre;?>" data-price = "<?php echo $price; ?>"data-desc = "<?php echo $desc; ?>" data-cat = "<?php echo $cat; ?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
-							 
-							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
+							<!--<a href="#"data-target="#editProductModal" class="edit" data-toggle="modal" data-id="<?php echo $id;?>" data-nomap="<?php echo $nombre;?>" data-price = "<?php echo $price; ?>"data-desc = "<?php echo $desc; ?>" data-cat = "<?php echo $cat; ?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a> -->
+							<!-- TODO - make this delete from the cart -->
+							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="remove from cart">&#xE872;</i></a>
                     		</td>
 							
 							

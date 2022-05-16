@@ -8,7 +8,7 @@
 	
 
 	// DELETE FROM  database
-    $sql = "DELETE FROM  product WHERE id_product='$product'";// dps FROM  va la tabla y dps el campo de la tabla
+    $sql = "DELETE FROM cart WHERE id_product='$product'";// dps FROM  va la tabla y dps el campo de la tabla
 
 	$query = mysqli_query($con,$sql);
     // if product has been added successfully

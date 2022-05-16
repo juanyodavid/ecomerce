@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -27,10 +27,8 @@
                     </div>
                     <div class="col-sm-6">
                         <a href="../cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe8ac;</i> <span>Logout</span></a>
-
-                        <a href="../checkout.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Checkout</span></a>
-                     <a href="../menu.php" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xe5c4;</i> <span>Menú</span>
-                        </a>
+                        <a href="checkout.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xeb88;</i> <span>Checkout</span></a>
+                        <a href="../menu.php" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xe5c4;</i> <span>Menu</span></a>
                     </div>
                 </div>
             </div>
@@ -38,19 +36,19 @@
 
             <div class='clearfix'></div>
             <hr>
-            <div id="loader"></div>Carga de datos ajax aqui
+            <div id="loader"></div><!-- Carga de datos ajax aqui -->
             <div id="resultados"></div><!-- Carga de datos ajax aqui -->
             <div class='outer_div'></div><!-- Carga de datos ajax aqui -->
         </div>
     </div>
 
     <?php 
-    include("html/product_crud/modal_edit.php"); 
-    include("html/product_crud/modal_add.php"); 
-    include("html/product_crud/modal_delete.php"); 
+    include("html/cart_crud/modal_edit.php"); 
+    include("html/cart_crud/modal_add.php"); 
+    include("html/cart_crud/modal_delete.php"); 
     ?>
     <!-- Delete Modal HTML -->
-    <script src="js/product_script.js"></script>
+    <script src="js/cart_script.js"></script>
 </body>
 
 </html>

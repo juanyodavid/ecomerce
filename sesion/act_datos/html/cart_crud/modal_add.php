@@ -6,7 +6,7 @@ $id = $_SESSION['identification'];
 <div id="addProductModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form action="ajax/product_ajax/guardar_producto.php" method="POST" enctype="multipart/form-data" name="add_product" id="add_product">
+			<form action="ajax/cart_ajax/guardar_producto.php" method="POST" enctype="multipart/form-data" name="add_product" id="add_product">
 				<div class="modal-header">
 					<h4 class="modal-title">Checkout</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -112,8 +112,6 @@ $id = $_SESSION['identification'];
                                 <button class="btn btn-sm btn-danger" type="reset">
                                 <i class="mdi mdi-lock-reset"></i>Reset</button>
                             </div>
-
-
 				</div>
 			</form>
 		</div>

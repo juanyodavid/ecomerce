@@ -127,9 +127,10 @@ if($action == 'ajax'){
 						<td class='text-right'><?php echo "Total price:"; ?></td>
 						<td class = 'text-center'><?php echo "$sum"; ?></td>
 					</tr>
-				</tfoot>			
+				</tfoot>		
 			</table>
 		</div>	
+		
 
 	
 	

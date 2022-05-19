@@ -20,7 +20,7 @@
 <body>
     <div class="container">
         <div class="table-wrapper">
-        <form>
+        <form action="ajax/cart_ajax/guardar_producto.php" method="POST" enctype="multipart/form-data" name="add_product" id="add_product">
             <!--<div class="padding"> -->
                 <div class="row">
                     <div class="col-sm-6">

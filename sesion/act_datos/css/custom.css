@@ -404,3 +404,16 @@
         outline: 0;
         box-shadow: 0 0 0 #F44336;
     }
+
+    .panel-heading{
+        position:relative;
+    }
+      
+    .main-menu{
+        float: none;
+        margin-right: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+    }

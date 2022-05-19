@@ -29,13 +29,18 @@ $name = $_SESSION['allName'];
 
 <body>
     <div class="welcome">
-        <h1>Bienvenido  <?php echo $name;  ?> </h1>
-        <a href="../sesion/act_datos/product.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>My Products</span></a>
-        <a href="../sesion/act_datos/cart.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>My Cart</span></a>
-        <a href="../sesion/act_datos/sales.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>My sales</span></a>
-        <a href="../sesion/act_datos/shopping.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>My shopping</span></a>
-        <a href="../index.php" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xe5d2;</i> <span>Menu principal</span></a>
-        <a href="../sesion/cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe8ac;</i> <span>Logout</span></a>
+        <h1>Welcome, <?php echo $name;  ?>!</h1>
+            <a href="../index.php" class="main-menu btn-block btn-info" data-toggle="modal"><i class="material-icons">&#xe1db;</i> <span> Main Menu</span></a>
+            <br>
+            <a href="../sesion/act_datos/product.php" class="btn-block btn-success" data-toggle="modal"><i class="material-icons">&#xe8d1;</i> <span> Your listings (for sale)</span></a>
+            <br>
+            <a href="../sesion/act_datos/cart.php" class="main-menu btn-block btn-success" data-toggle="modal"><i class="material-icons">&#xe8cc;</i> <span> Shopping cart</span></a>
+            <br>
+            <a href="../sesion/act_datos/sales.php" class="btn-block btn-success" data-toggle="modal"><i class="material-icons">&#xe889;</i> <span> Sales history</span></a>
+            <br>
+            <a href="../sesion/act_datos/shopping.php" class="btn-block btn-success" data-toggle="modal"><i class="material-icons">&#xef63;</i> <span> Purchase history</span></a>
+            <br>
+            <a href="../sesion/cerrar.php" class="btn-block btn-danger" data-toggle="modal"><i class="material-icons">&#xe9ba;</i> <span> Log out</span></a>
     </div>
 </body>
 

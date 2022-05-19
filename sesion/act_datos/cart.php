@@ -26,7 +26,7 @@
                        <h2>Your cart <b></b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="../cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe8ac;</i> <span>Logout</span></a>
+                        <a href="../cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe9ba;</i> <span>Log out</span></a>
                         <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xeb88;</i> <span>Checkout</span></a>
                         <!--<a href="./checkout.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xeb88;</i> <span>Checkout</span></a> -->
                         <a href="../menu.php" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xe5c4;</i> <span>Menu</span></a>

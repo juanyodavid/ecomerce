@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Shopping</title>
+    <title>Purchase History</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,22 +23,18 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-                       <h2>Shopping List:</h2>
+                       <h2>Your Purchase History</h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="../cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe8ac;</i> <span>Logout</span></a>
-                        <a href="../act_datos/musica.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar música</span></a>
-
-                        <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Product</span></a>
-                     <a href="../menu.php" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xe5c4;</i> <span>Menú</span>
-                        </a>
+                        <a href="../cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe9ba;</i> <span>Log out</span></a>
+                        <a href="../menu.php" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xe5c4;</i> <span>Menu</span></a>
                     </div>
                 </div>
             </div>
             <div class='col-sm-3 pull-right'>
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
-                        <input type="text" class="form-control" placeholder="Buscar por nombre" id="q" onkeyup="load(1);" />
+                        <input type="text" class="form-control" placeholder="Search..." id="q" onkeyup="load(1);" />
                         <span class="input-group-btn">
                             <button class="btn btn-info" type="button" onclick="load(1);">
                                 <span class="glyphicon glyphicon-search"></span>

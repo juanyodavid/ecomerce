@@ -57,8 +57,8 @@
     </div>
 
     <?php 
-    include("html/sales_crud/modal_edit.php"); 
-    include("html/sales_crud/modal_add.php"); 
+    // include("html/sales_crud/modal_edit.php"); 
+    // include("html/sales_crud/modal_add.php"); 
     include("html/sales_crud/modal_delete.php"); 
     ?>
     <!-- Delete Modal HTML -->

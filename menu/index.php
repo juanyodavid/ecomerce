@@ -112,7 +112,7 @@ if(isset($_SESSION['nombre'])){
                     <p>If you enjoyed this products, you might also like:</p>
                     
                     <a href="http://tympanus.net/Development/PerspectivePageViewNavigation/">
-                        <img src="../sesion/act_datos/ajax/product_ajax/images/<?php echo $foto; ?>);" />
+                        <img src="../sesion/act_datos/ajax/product_ajax/images/<?php echo $foto; ?>" />
                         <h3><?php echo $nombre ?></h3>
                     </a>
                 </section>

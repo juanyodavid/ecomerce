@@ -20,15 +20,7 @@ if($action == 'ajax'){
 	$sWhere="cart.state = 1";
 	$sWhere.=" ORDER BY product.id_product DESC";
 	$constraint=" product.id_seller = '".$vendedor."'  ";
-	
-	/*
-	$tables="product";
-	$campos="*";
-	$sWhere="product.name LIKE '%".$query."%'";
-	$sWhere.=" order by product.id_product DESC";
-	$constraint=" id_seller = '".$vendedor."'  ";
-	*/
-	
+
 	
 	include '../pagination.php'; //include pagination file
 	//pagination variables

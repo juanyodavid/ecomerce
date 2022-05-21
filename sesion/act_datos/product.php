@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-sm-6">
                         <a href="../cerrar.php" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xe9ba;</i> <span>Log out</span></a>
-                        <a href="../sesion/act_datos/shopping.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xe889;</i> <span> Sales history</span></a>
+                        <a href="../act_datos/shopping.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xe889;</i> <span> Sales history</span></a>
                         <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Product</span></a>
                      <a href="../menu.php" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xe5c4;</i> <span>Menu</span>
                         </a>

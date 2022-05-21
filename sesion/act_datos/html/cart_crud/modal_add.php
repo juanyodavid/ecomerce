@@ -17,7 +17,7 @@ $id = $_SESSION['identification'];
                                 <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="paymentMethod">Please select a payment method</label>
-                                    <select class="form-control" id="paymentMethod">
+                                    <select class="form-control" required id="paymentMethod">
                                         <option>Payment Method</option>
                                         <option>Paypal</option>
                                         <option>Visa</option>
@@ -31,7 +31,7 @@ $id = $_SESSION['identification'];
                                     <div class="form-group">
                                         <label for="ccnumber">Credit Card Number</label>
                                         <div class="input-group">
-                                        <input class="form-control" type="text" placeholder="0000 0000 0000 0000" autocomplete="email">
+                                        <input class="form-control" required type="text" placeholder="0000 0000 0000 0000" autocomplete="email">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                             <i class="mdi mdi-credit-card"></i>
@@ -44,7 +44,7 @@ $id = $_SESSION['identification'];
                             <div class="row">
                                 <div class="form-group col-sm-4">
                                     <label for="ccmonth">Month</label>
-                                    <select class="form-control" id="ccmonth">
+                                    <select class="form-control" required id="ccmonth">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -61,7 +61,7 @@ $id = $_SESSION['identification'];
                                 </div>
                                 <div class="form-group col-sm-4">
                                     <label for="ccyear">Year</label>
-                                    <select class="form-control" id="ccyear">
+                                    <select class="form-control" required id="ccyear">
                                         <option>2014</option>
                                         <option>2015</option>
                                         <option>2016</option>
@@ -79,7 +79,7 @@ $id = $_SESSION['identification'];
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="cvv">CVV/CVC</label>
-                                        <input class="form-control" id="cvv" type="text" placeholder="123">
+                                        <input class="form-control" required id="cvv" type="number" placeholder="123">
                                     </div>
                                 </div>
                             </div>
@@ -87,23 +87,24 @@ $id = $_SESSION['identification'];
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="firstName">First Name</label>
-                                        <input class="form-control" id="firstName" type="text"></textarea>
+                                        <input type="hidden" name="buy_add" id="buy_add" value="<?php echo $id; ?>">
+                                        <input class="form-control" required id="firstName" name="firstName"type="text">
                                     </div>
                                 </div> 
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="lastName">Last Name</label>
-                                        <input class="form-control" id="lastName" type="text"></textarea>
+                                        <input class="form-control" required id="lastName" type="text">
                                     </div>
                                 </div> 
                             </div>
                                 <div class="form-group">
                                     <label for="address">Address</label>
-                                    <input class="form-control" id="address" type="text"></textarea>
+                                    <input class="form-control" required id="address" type="text">
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Phone number</label>
-                                    <input class="form-control" id="phoneNumber" type="text" placeholder="+886 937 123 456"></textarea>
+                                    <input class="form-control" required id="phoneNumber" type="text" placeholder="+886 937 123 456">
                                 </div>
                             </div>
                             <div class="card-footer">

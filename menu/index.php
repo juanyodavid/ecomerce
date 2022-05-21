@@ -41,14 +41,14 @@ if(isset($_SESSION['nombre'])){
 						<!-- <a href="#musicos"><i class="material-icons people"></i><span>Artistas</span></a> -->
 						<!-- <a href="#discos"><i class="material-icons speaker_group"></i><span>Discos</span></a> -->
 					<?php if ($ban == true) { ?>	
-                        <a href="../sesion/act_datos/product.php"><i class="fa fa-fw fa-bar-chart-o"></i><span>See my products</span></a>
-						<a href="../sesion/act_datos/product.php" data-toggle="modal"><i class="material-icons playlist_add"></i><span>Add a new product</span></a>
-						<a href="../sesion/act_datos/shopping.php"><i class="material-icons my_library_add"></i><span>See my purchases</span></a>
-						<a href="../sesion/act_datos/sales.php"><i class="material-icons my_library_add"></i><span>See my sales</span></a>
-						<a href="../sesion/act_datos/cart.php"><i class="material-icons queue_music"></i><span>See my cart</span></a>
-						<a href="../sesion/cerrar.php" ><i class="fa fa-fw fa-user"></i><span>Logout</span></a><?php } else{ ?>
-						<a href="../sesion/login/index.html#toregister" ><i class="fa fa-fw fa-user"></i><span>Register</span></a>
-						<a href="../sesion/login/index.html" ><i class="fa fa-fw fa-user"></i><span>Login</span></a><?php } ?>
+                        <a href="../sesion/act_datos/product.php"><i class="fa fa-list-ul"></i><span>See my products</span></a>
+						<a href="../sesion/act_datos/product.php" data-toggle="modal"><i class="fa fa-plus-circle"></i><span>Add a new product</span></a>
+						<a href="../sesion/act_datos/shopping.php"><i class="fa fa-credit-card"></i><span>See my purchases</span></a>
+						<a href="../sesion/act_datos/sales.php"><i class="fa fa-money"></i><span>See my sales</span></a>
+						<a href="../sesion/act_datos/cart.php"><i class="fa fa-shopping-cart"></i><span>See my cart</span></a>
+						<a href="../sesion/cerrar.php" ><i class="fa fa-sign-out"></i><span>Logout</span></a><?php } else{ ?>
+						<a href="../sesion/login/index.html#toregister" ><i class="fa fa-plus-square"></i><span>Register</span></a>
+						<a href="../sesion/login/index.html" ><i class="fa fa-sign-in"></i><span>Login</span></a><?php } ?>
 					</div>
 				</nav>
         </div>
@@ -108,14 +108,7 @@ if(isset($_SESSION['nombre'])){
 
                 </section>
                 <!-- Related demos -->
-                <section class="related">
-                    <p>If you enjoyed this products, you might also like:</p>
-                    
-                    <a href="http://tympanus.net/Development/PerspectivePageViewNavigation/">
-                        <img src="../sesion/act_datos/ajax/product_ajax/images/<?php echo $foto; ?>" />
-                        <h3><?php echo $nombre ?></h3>
-                    </a>
-                </section>
+             
             </div>
         </div>
         <!-- /content-wrap -->

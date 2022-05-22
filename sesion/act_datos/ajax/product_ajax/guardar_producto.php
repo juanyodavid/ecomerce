@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 if (empty($_POST['nomap_add'])) {
 	$errors[] = "Enter the name of the product";
 } elseif (!empty($_POST['nomap_add'])) {
@@ -85,4 +85,4 @@ if (isset($messages)) {
 	</div>
 <?php
 }
-?> -->
+?> 

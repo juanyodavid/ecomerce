@@ -14,12 +14,13 @@ $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['a
 if($action == 'ajax'){
 	//$query = mysqli_real_escape_string($con,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
 
-	//$campos="product.name, product.price,";
-	$campos = "*";
-	$tables="cart JOIN product ON cart.id_product = product.id_product";
+	$tables="cart LEFT JOIN product ON product.id_product = cart.`id_product`";
+	$campos="*";
 	$sWhere="cart.state = 1";
-	$sWhere.=" ORDER BY product.id_product DESC";
-	$constraint=" product.id_seller = '".$vendedor."'  ";
+	$sWhere.=" order by cart.id_cart DESC";
+	$constraint=" cart.id_user = '".$vendedor."'  ";
+	$constraint2 =" cart.state = 1 ";
+
 
 	
 	include '../pagination.php'; //include pagination file
@@ -35,9 +36,9 @@ if($action == 'ajax'){
 	else {echo mysqli_error($con);}
 	$total_pages = ceil($numrows/$per_page);
 	//main query to fetch the data
-	$consul = "SELECT $campos FROM  $tables where $constraint and $sWhere  LIMIT $offset,$per_page";
+	$consul = "SELECT $campos FROM  $tables where $constraint and $constraint2  and $sWhere LIMIT $offset,$per_page";
 	$query = mysqli_query($con,$consul);
-	//echo $consul;
+	// echo $consul;
 	//loop through fetched data
 	if ($numrows>0){
 		

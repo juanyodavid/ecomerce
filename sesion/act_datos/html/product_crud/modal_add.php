@@ -28,7 +28,14 @@ $id = $_SESSION['identification'];
 					</div>
 					<div class="form-group">
 						<label>Category</label>
-						<input type="text" name="cat_add" id="cat_add" class="form-control">
+						<select name="cat_add"  id="cat_add" class="form-control" required>
+        						<?php
+        				         $query2 =mysqli_query($con,"SELECT * FROM category  ");
+         						 while ($valores = mysqli_fetch_array($query2)) {
+          							echo '<option value="'.$valores['id_category'].'">'.$valores['id_category'].'-'.$valores['name'].' </option>';
+          						}
+          						?>
+      						</select>
 					</div>
 					<div class="form-group">
 						<label>Photo</label>

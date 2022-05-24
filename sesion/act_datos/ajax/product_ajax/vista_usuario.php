@@ -88,7 +88,7 @@ if($action == 'ajax'){
 							<td class='text-center'><?php echo $price;?> NT$</td>
 							<td class='text-center'><?php echo $desc;?></td>
 							<td class='text-center'><?php echo $cat;?></td>
-							<td class='text-center'><a href="ajax/product_ajax/images/<?php echo $link;?>">See image</a></td>
+							<td class='text-center'><a target="_blank" href="ajax/product_ajax/images/<?php echo $link;?>">See image</a></td>
 
 
 							                            

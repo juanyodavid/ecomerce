@@ -78,12 +78,7 @@ if($action == 'ajax'){
 							$cat = $valores['name'];
 							
 							$sum = $sum+$price;
-							/*
-							$consulta = "SELECT `name` FROM `image` where id_product = ".$id." ";
-							$query2 =mysqli_query($con,$consulta);
-							$valores = mysqli_fetch_array($query2);
-							$link =  $valores['name'];
-							*/
+
 						?>	
 						<tr >
 							<td class='text-center'><?php echo $id;?></td>
@@ -91,12 +86,8 @@ if($action == 'ajax'){
 							<td class='text-center'><?php echo $cat;?></td>
 							<td class='text-center'><?php echo $price;?> NT$</td>
 
-							<!--<td class='text-center'><?php //echo $desc;?></td>-->
-							<!-- <td class='text-center'><a href="ajax/product_ajax/images/<?php //echo $link;?>">See image</a></td> -->
-                        
 							<td>
-							<!--<a href="#"data-target="#editProductModal" class="edit" data-toggle="modal" data-id="<?php echo $id;?>" data-nomap="<?php echo $nombre;?>" data-price = "<?php echo $price; ?>"data-desc = "<?php echo $desc; ?>" data-cat = "<?php echo $cat; ?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a> -->
-							<!-- TODO - make this delete from the cart -->
+
 							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="remove from cart">&#xE872;</i></a>
                     		</td>
 						</tr>

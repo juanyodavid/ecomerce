@@ -163,8 +163,6 @@ if ($ban) {
 					$query = mysqli_query($con, $consulta);
 					while ($row = mysqli_fetch_array($query)) {
 						$id = $row[0];
-						echo "el valor es:";
-						echo $id;
 						$nombre = $row['name'];
 						$seller = $row['id_seller'];
 						$price = $row['price'];
@@ -187,7 +185,7 @@ if ($ban) {
 							<div ce class="ch-item">
 								<div class="ch-info">
 									<h3><?php echo $nombre ?></h3>
-									<p>by <?php echo $user; ?> 
+									<p>Price: <?php echo $price; ?>  NT$	
 									<?php if($ban == False){?>
 									<a href="../sesion/login/index.html">Add to cart</a></p>
 									<?php } else{?>

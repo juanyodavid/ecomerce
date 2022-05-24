@@ -59,21 +59,6 @@ CREATE TABLE `cart` (
   references product(id_product) on delete no action on update cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `purchase` (
-  `id_purchase` int(11) NOT NULL AUTO_INCREMENT,
-  `creation_date` date NOT NULL,
-  index(id_purchase),
-  PRIMARY KEY (`id_purchase`),
-  `id_buyer` int(11) NOT NULL,
-  `id_cart` int(11) NOT NULL,
-  constraint productBuyer
-  foreign key id_buyer_purchase(id_buyer)
-  references user(id_user) on delete no action on update cascade,
-  constraint purchaseInCart
-  foreign key id_cart_purchase(id_cart) 
-  REFERENCES cart(id_cart) on delete no action on update cascade
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 CREATE TABLE `image` (  
   `id_image` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(127) NOT NULL,

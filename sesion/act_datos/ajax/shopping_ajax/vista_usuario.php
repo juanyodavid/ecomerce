@@ -89,16 +89,13 @@ if($action == 'ajax'){
 							<td class='text-center'><?php echo $price;?> NT$</td>
 							<td class='text-center'><?php echo $desc;?></td>
 							<td class='text-center'><?php echo $cat;?></td>
-							<td class='text-center'><a href="ajax/product_ajax/images/<?php echo $link;?>">See image</a></td>
+							<td class='text-center'><a target="_blank" href="ajax/product_ajax/images/<?php echo $link;?>">See image</a></td>
 
 
 							                            
 						<td>
 							
-							 <a href="#"data-target="#editProductModal" class="edit" data-toggle="modal" data-id="<?php echo $id;?>" data-nomap="<?php echo $nombre;?>" data-price = "<?php echo $price; ?>"data-desc = "<?php echo $desc; ?>" data-cat = "<?php echo $cat; ?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
-							 
-							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
-                    		</td>
+				                    		</td>
 							
 							
 						</tr>

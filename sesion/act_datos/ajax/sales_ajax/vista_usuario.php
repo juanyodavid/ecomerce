@@ -69,18 +69,6 @@ if($action == 'ajax'){
 							$desc = $row['description'];
 							$cat = $row['id_category'];
 							$finales++;
-
-							// $consulta = "SELECT `name` FROM category where id_category = ".$cat." ";
-							// $query2 =mysqli_query($con,$consulta);
-							// $valores = mysqli_fetch_array($query2);
-							// $cat = $valores['name'];	
-
-
-							// $consulta = "SELECT `name` FROM `image` where id_product = ".$id." ";
-							// $query2 =mysqli_query($con,$consulta);
-							// $valores = mysqli_fetch_array($query2);
-							// $link =  $valores['name'];
-							 
 						?>	
 						<tr >
 							<td class='text-center'><?php echo $id;?></td>
@@ -88,15 +76,13 @@ if($action == 'ajax'){
 							<td class='text-center'><?php echo $price;?> NT$</td>
 							<td class='text-center'><?php echo $desc;?></td>
 							<td class='text-center'><?php echo $cat;?></td>
-							<td class='text-center'><a href="ajax/product_ajax/images/<?php echo $link;?>">See image</a></td>
+							<td class='text-center'><a target="_blank" href="ajax/product_ajax/images/<?php echo $link;?>">See image</a></td>
 
 
 							                            
 						<td>
 			
-							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
-                    		</td>
-							
+			
 							
 						</tr>
 						<?php }?>
